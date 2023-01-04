@@ -1,11 +1,13 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import { Inter } from '@next/font/google'
-import styles from '../styles/Home.module.css'
+import Head from 'next/head';
+import Image from 'next/image';
+import { Inter } from '@next/font/google';
+import styles from '../styles/Home.module.css';
+import { useTheme } from 'next-themes';
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ subsets: ['latin'] });
 
 export default function Home() {
+  const { theme, setTheme } = useTheme();
   return (
     <>
       <Head>
@@ -20,6 +22,8 @@ export default function Home() {
             Get started by editing&nbsp;
             <code className={styles.code}>pages/index.tsx</code>
           </p>
+          <button onClick={() => setTheme('light')}>Light Mode</button>
+          <button onClick={() => setTheme('dark')}>Dark Mode</button>
           <div>
             <a
               href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
@@ -104,7 +108,7 @@ export default function Home() {
 
           <a
             href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
+            className={`${styles.card} bg-light-background text-light-foreground dark:bg-dark-background dark:text-dark-foreground dark:border-pink-500`}
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -117,7 +121,26 @@ export default function Home() {
             </p>
           </a>
         </div>
+        <div className="flex flex-row">
+          <Image
+            className={styles.logo}
+            src="/next.svg"
+            alt="Next.js Logo"
+            width={180}
+            height={37}
+            priority
+          />
+          <div className={`${styles.thirteen} `}>
+            <Image
+              src="/thirteen.svg"
+              alt="13"
+              width={40}
+              height={31}
+              priority
+            />
+          </div>
+        </div>
       </main>
     </>
-  )
+  );
 }
