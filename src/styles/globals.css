@@ -88,7 +88,7 @@ body {
   color: rgb(var(--foreground-rgb));
 
   background: linear-gradient(to right, rgb(var(--background-start-rgb)), rgb(var(--background-end-rgb)));
-  background: linear-gradient(to right, rgb(0, 4, 40), rgb(0, 78, 146));
+  background: linear-gradient(to right, #000428, rgb(0, 78, 146));
   background: linear-gradient(to left,
       transparent,
       rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
@@ -103,6 +103,7 @@ a {
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
+    color: #a1c4fd #c2e9fb
   }
 }
 
