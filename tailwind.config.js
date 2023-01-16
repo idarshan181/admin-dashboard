@@ -2,20 +2,21 @@
 const colors = require('tailwindcss/colors');
 module.exports = {
   darkMode: 'class',
-  content: ['./src/**/*.{js,ts,jsx,tsx}'],
+  content: ['./src/**/*.{js,ts,jsx,tsx}', './src/**/*.html'],
   theme: {
     colors: {
       transparent: 'transparent',
       current: 'currentColor',
       black: colors.black,
-      blue: colors.blue,
+      blue: colors.sky,
       white: colors.white,
       gray: colors.gray,
       green: colors.emerald,
       purple: colors.violet,
-      yellow: colors.amber,
+      yellow: colors.yellow,
       red: colors.red,
-      pink: colors.fuchsia
+      pink: colors.fuchsia,
+      cyan: colors.cyan
     },
     extend: {
       transitionProperty: {

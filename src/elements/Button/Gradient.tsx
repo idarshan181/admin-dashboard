@@ -1,11 +1,10 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable unused-imports/no-unused-vars */
 import React, { ReactNode } from 'react';
-interface ButtonProps {
+
+type ButtonProps = {
   children?: ReactNode;
-  [key: string]: any;
-  onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
-}
+} & React.ComponentPropsWithoutRef<'button'>;
 const Gradient = ({ children, onClick }: ButtonProps) => {
   return (
     <button
