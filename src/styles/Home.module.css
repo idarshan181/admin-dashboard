@@ -11,7 +11,7 @@
   display: inherit;
   justify-content: inherit;
   align-items: inherit;
-  font-size: 0.85rem;
+  /* font-size: 0.85rem; */
   max-width: var(--max-width);
   width: 100%;
   z-index: 2;
@@ -100,7 +100,8 @@
   content: '';
   left: 50%;
   position: absolute;
-  filter: blur(45px);
+  -webkit-filter: blur(45px);
+          filter: blur(45px);
   transform: translateZ(0);
 }
 
@@ -132,7 +133,8 @@
 
 /* Conic Gradient Animation */
 .thirteen::before {
-  animation: 6s rotate linear infinite;
+  -webkit-animation: 6s rotate linear infinite;
+          animation: 6s rotate linear infinite;
   width: 200%;
   height: 200%;
   background: var(--tile-border);
@@ -143,11 +145,9 @@
   inset: 0;
   padding: 1px;
   border-radius: var(--border-radius);
-  background: linear-gradient(
-    to bottom right,
-    rgba(var(--tile-start-rgb), 1),
-    rgba(var(--tile-end-rgb), 1)
-  );
+  background: linear-gradient(to bottom right,
+      rgba(var(--tile-start-rgb), 1),
+      rgba(var(--tile-end-rgb), 1));
   background-clip: content-box;
 }
 
@@ -165,7 +165,8 @@
 
 @media (prefers-reduced-motion) {
   .thirteen::before {
-    animation: none;
+    -webkit-animation: none;
+            animation: none;
   }
 
   .card:hover span {
@@ -226,13 +227,12 @@
     border-radius: 0;
     border: none;
     border-bottom: 1px solid rgba(var(--callout-border-rgb), 0.25);
-    background: linear-gradient(
-      to bottom,
-      rgba(var(--background-start-rgb), 1),
-      rgba(var(--callout-rgb), 0.5)
-    );
+    background: linear-gradient(to bottom,
+        rgba(var(--background-start-rgb), 1),
+        rgba(var(--callout-rgb), 0.5));
     background-clip: padding-box;
-    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+            backdrop-filter: blur(24px);
   }
 
   .description div {
@@ -241,11 +241,9 @@
     inset: auto 0 0;
     padding: 2rem;
     height: 200px;
-    background: linear-gradient(
-      to bottom,
-      transparent 0%,
-      rgb(var(--background-end-rgb)) 40%
-    );
+    background: linear-gradient(to bottom,
+        transparent 0%,
+        rgb(var(--background-end-rgb)) 40%);
     z-index: 1;
   }
 }
@@ -259,12 +257,24 @@
 
 @media (prefers-color-scheme: dark) {
   .vercelLogo {
-    filter: invert(1);
+    -webkit-filter: invert(1);
+            filter: invert(1);
   }
 
   .logo,
   .thirteen img {
-    filter: invert(1) drop-shadow(0 0 0.3rem #ffffff70);
+    -webkit-filter: invert(1) drop-shadow(0 0 0.3rem #ffffff70);
+            filter: invert(1) drop-shadow(0 0 0.3rem #ffffff70);
+  }
+}
+
+@-webkit-keyframes rotate {
+  from {
+    transform: rotate(360deg);
+  }
+
+  to {
+    transform: rotate(0deg);
   }
 }
 
@@ -272,6 +282,7 @@
   from {
     transform: rotate(360deg);
   }
+
   to {
     transform: rotate(0deg);
   }

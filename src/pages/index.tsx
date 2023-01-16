@@ -1,14 +1,14 @@
 import { Inter } from '@next/font/google';
 import Head from 'next/head';
 import Image from 'next/image';
-import { useTheme } from 'next-themes';
 
 import styles from '../styles/Home.module.css';
+
+import { GradientButton } from '@/elements/Button';
 
 const inter = Inter({ subsets: ['latin'] });
 
 export default function Home() {
-  const { setTheme } = useTheme();
   return (
     <>
       <Head>
@@ -23,8 +23,10 @@ export default function Home() {
             Get started by editing&nbsp;
             <code className={styles.code}>pages/index.tsx</code>
           </p>
-          <button onClick={() => setTheme('light')}>Light Mode</button>
-          <button onClick={() => setTheme('dark')}>Dark Mode</button>
+          <GradientButton onClick={e => console.log(e)}>
+            Show Console.log
+          </GradientButton>
+
           <div>
             <a
               href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
