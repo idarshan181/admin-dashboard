@@ -8,7 +8,7 @@ module.exports = {
       transparent: 'transparent',
       current: 'currentColor',
       black: colors.black,
-      blue: colors.sky,
+      blue: colors.blue,
       white: colors.white,
       gray: colors.gray,
       green: colors.emerald,
@@ -16,7 +16,8 @@ module.exports = {
       yellow: colors.yellow,
       red: colors.red,
       pink: colors.fuchsia,
-      cyan: colors.cyan
+      cyan: colors.cyan,
+      sky: colors.sky
     },
     extend: {
       transitionProperty: {

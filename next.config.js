@@ -23,7 +23,8 @@ const nextConfig = {
       'lh3.googleusercontent.com',
       'raw.githubusercontent.com',
       'avatars.githubusercontent.com',
-      's3.ap-south-1.amazonaws.com'
+      's3.ap-south-1.amazonaws.com',
+      'cdn.cdnlogo.com'
     ],
     formats: ['image/avif', 'image/webp'],
     dangerouslyAllowSVG: true,
