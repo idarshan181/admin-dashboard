@@ -1,23 +1,17 @@
+import Avatar from '@/elements/Avatar';
+import Image from 'next/image';
 import Link from 'next/link';
 
-import Layout from '@/components/Layout';
-import Image from 'next/image';
-
-const DashboardPage = () => {
+export default function SidebarPage() {
   return (
-    <Layout
-      title="Dashboard"
-      header={false}
-      footer={false}
-      className="flex h-screen flex-row"
-    >
+    <div className="flex h-screen flex-row">
       <aside className="box-shadow: 2px 2px 10px 0px rgba(0,0,0,0.75); z-10 flex h-screen w-20 flex-initial flex-shrink-0 flex-col rounded-r-lg bg-[#162041]  text-white sm:h-screen sm:w-52">
         <div className="flex h-screen flex-shrink-0 flex-col sm:h-full">
           {/* Brand Logo */}
 
           <a
             href="https://www.google.com"
-            className="mt-3 flex h-16 w-full flex-col items-center justify-center p-2 sm:mx-3 sm:w-full sm:flex-row sm:justify-start sm:gap-2"
+            className="mt-3 flex h-16 flex-col items-center justify-center overflow-hidden p-2 sm:mx-3 sm:flex-row sm:justify-start sm:gap-2"
           >
             <Image
               alt="Logo"
@@ -175,35 +169,65 @@ const DashboardPage = () => {
             </li>
           </ul>
           <hr className="mt-auto w-full" />
-          <span className="my-2 w-full flex-initial flex-row px-3">
-            <a
-              href="#"
-              className="flex items-center justify-center rounded-lg p-2 text-base font-normal text-white hover:bg-[#242E4D] dark:text-white dark:hover:bg-gray-700 sm:justify-start"
-              title="Dashboard"
-            >
-              <svg
-                aria-hidden="true"
-                className="h-6 w-6 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-                xmlns="http://www.w3.org/2000/svg"
+          <div className="flex flex-col">
+            <span className="my-2 w-full flex-initial flex-row px-3">
+              <a
+                href="#"
+                className="flex items-center justify-center rounded-lg p-2 text-base font-normal text-white hover:bg-[#242E4D] dark:text-white dark:hover:bg-gray-700 sm:justify-start"
+                title="Dashboard"
               >
-                <path d="M2 10a8 8 0 018-8v8h8a8 8 0 11-16 0z"></path>
-                <path d="M12 2.252A8.014 8.014 0 0117.748 8H12V2.252z"></path>
-              </svg>
-              <span className="ml-3 hidden sm:inline-flex">Log Out</span>
-            </a>
-          </span>
+                <svg
+                  aria-hidden="true"
+                  className="h-6 w-6 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path d="M2 10a8 8 0 018-8v8h8a8 8 0 11-16 0z"></path>
+                  <path d="M12 2.252A8.014 8.014 0 0117.748 8H12V2.252z"></path>
+                </svg>
+                <span className="ml-3 hidden sm:inline-flex">Log Out</span>
+              </a>
+            </span>
+            <span className="my-2 flex flex-row px-3">
+              <a
+                href="#"
+                className="flex items-center justify-center rounded-full p-2 text-base font-normal text-white hover:bg-[#242E4D] dark:text-white dark:hover:bg-gray-700 sm:justify-start"
+                title="Dashboard"
+              >
+                <Avatar />
+              </a>
+            </span>
+            <div className="my-2 w-full flex-initial flex-row px-3">
+              <a
+                href="#"
+                title="Avatar"
+                className="flex items-center justify-center rounded-lg p-2 text-base font-normal text-white hover:bg-[#242E4D] dark:text-white dark:hover:bg-gray-700 sm:justify-start"
+              >
+                <Avatar />
+              </a>
+            </div>
+          </div>
         </div>
       </aside>
-      <div className="flex-1 flex-col">
-        <h1>Hello Next.js 👋</h1>
+      <div className="ml-3 mt-3 flex-initial flex-row flex-wrap">
+        <p>Hello Next.js 👋</p>
+        <p>
+          <Link href="/">Home</Link>
+        </p>
+        <p>Hello Next.js 👋</p>
+        <p>
+          <Link href="/">Home</Link>
+        </p>
+        <p>Hello Next.js 👋</p>
+        <p>
+          <Link href="/">Home</Link>
+        </p>
+        <p>Hello Next.js 👋</p>
         <p>
           <Link href="/">Home</Link>
         </p>
       </div>
-    </Layout>
+    </div>
   );
-};
-
-export default DashboardPage;
+}
