@@ -51,8 +51,8 @@ export default function SidebarPage() {
 
             {/* Kanban */}
             <li className="sm:flex-initial sm:flex-row">
-              <a
-                href="#"
+              <Link
+                href="/avatar"
                 className="flex items-center justify-center rounded-lg p-2 text-base font-normal text-gray-100 hover:bg-[#242E4D] dark:text-white dark:hover:bg-gray-700 sm:justify-start"
               >
                 <svg
@@ -65,12 +65,12 @@ export default function SidebarPage() {
                   <path d="M5 3a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2V5a2 2 0 00-2-2H5zM5 11a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2v-2a2 2 0 00-2-2H5zM11 5a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V5zM11 13a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"></path>
                 </svg>
                 <span className="ml-3 hidden whitespace-nowrap sm:inline-flex sm:flex-1 sm:flex-row">
-                  Kanban
+                  Avatar
                 </span>
                 <span className="ml-3 hidden items-center justify-center rounded-full bg-gray-200 px-2 text-sm font-medium text-gray-800 dark:bg-gray-700 dark:text-gray-300 sm:inline-flex">
                   Pro
                 </span>
-              </a>
+              </Link>
             </li>
             <li className="sm:flex-initial sm:flex-row">
               <a
