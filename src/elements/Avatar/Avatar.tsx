@@ -1,3 +1,5 @@
+/* eslint-disable unused-imports/no-unused-vars */
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import Image from 'next/image';
 import {
   ComponentPropsWithoutRef,
@@ -21,7 +23,13 @@ const Indicator = {
   ACTIVE: '',
   INACTIVE: ''
 } as const;
-
+const SizePX = {
+  DEFAULT: 40,
+  XS: 24,
+  SM: 32,
+  LG: 80,
+  XL: 144
+};
 const Size = {
   DEFAULT: 'w-10 h-10 font-medium text-sm text-center',
   XS: 'w-6 h-6 text-xs font-medium text-center',
@@ -40,12 +48,13 @@ const PersonSize = {
 
 interface AvatarProps
   extends PropsWithChildren,
-    ComponentPropsWithoutRef<'image'> {
+    ComponentPropsWithoutRef<'img'> {
   initials?: string;
   tooltip?: string;
   indicator?: keyof typeof Indicator;
   variant?: keyof typeof Variant;
   size?: keyof typeof Size;
+  color?: keyof typeof Color;
   url?: string;
 }
 
@@ -69,7 +78,7 @@ const Avatar = ({
   className = '',
   initials = '',
   alt
-}: TAvatar) => {
+}: AvatarProps) => {
   // const [error, setError] = useState(false);
   const [imageStatus, setImageStatus] = useState('loading');
   const checkImage = async (url: string) => {
@@ -92,9 +101,11 @@ const Avatar = ({
   return (
     <>
       {imageStatus === 'loaded' && (
-        <img
+        <Image
           alt="USER"
           src={url}
+          width={SizePX[size]}
+          height={SizePX[size]}
           className={twMerge(
             Variant[variant],
             Size[size],
@@ -106,7 +117,7 @@ const Avatar = ({
       {imageStatus === 'error' && !children && (
         <div
           className={twMerge(
-            'relative overflow-hidden rounded-full bg-gray-100 dark:bg-gray-600',
+            'relative overflow-hidden rounded-full bg-gray-100 dark:bg-gray-600 ',
             Size[size]
           )}
         >
@@ -223,7 +234,7 @@ const Avatar = ({
 
 export default Avatar;
 
-interface Props {
+/* interface Props {
   crossOrigin?: string;
   referrerPolicy?: string;
   src: string;
@@ -272,3 +283,4 @@ const useLoaded = ({
 
   return loaded;
 };
+ */

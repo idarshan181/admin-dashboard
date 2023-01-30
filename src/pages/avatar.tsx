@@ -1,4 +1,5 @@
 import Layout from '@/components/Layout';
+
 import Avatar from '@/elements/Avatar';
 
 export default function AvatarPage() {
@@ -16,7 +17,11 @@ export default function AvatarPage() {
           />
           <Avatar size="SM">DP </Avatar>
           <Avatar />
-          <Avatar size="LG" variant="SQUARED" />
+          <Avatar
+            url="https://lh3.googleusercontent.com/a/AEdFTp7hUWPOOm8p0ucClEFlHMxg0CZd5V7zjCrPRUZWTA=s256-c"
+            size="LG"
+            variant="SQUARED"
+          />
           <Avatar size="XL" variant="BORDERED" />
         </div>
       </div>
