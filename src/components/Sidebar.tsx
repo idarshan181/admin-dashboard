@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 const Sidebar = () => {
   return (
-    <aside className="box-shadow: 2px 2px 10px 0px rgba(0,0,0,0.75); z-10 flex h-screen w-20 flex-initial flex-shrink-0 flex-col rounded-r-lg bg-[#162041]  text-white sm:h-screen sm:w-52">
+    <aside className="box-shadow: 2px 2px 10px 0px rgba(0,0,0,0.75); z-10 flex h-screen w-20 flex-initial flex-shrink-0 flex-col rounded-r-lg bg-[#162041]  text-white sm:h-full sm:w-52">
       <div className="flex h-screen flex-shrink-0 flex-col sm:h-full">
         {/* Brand Logo */}
 
@@ -29,7 +29,7 @@ const Sidebar = () => {
           {/* Dashboard */}
           <li className="w-full flex-initial flex-row">
             <Link
-              href="/avatar"
+              href="/dashboard"
               className="flex items-center justify-center rounded-lg p-2 text-base font-normal text-white hover:bg-[#242E4D] dark:text-white dark:hover:bg-gray-700 sm:justify-start"
               title="Dashboard"
             >
@@ -71,10 +71,10 @@ const Sidebar = () => {
             </Link>
           </li>
           <li className="sm:flex-initial sm:flex-row">
-            <a
-              href="#"
+            <Link
+              href="/buttons"
               className="flex items-center justify-center rounded-lg p-2 text-base font-normal text-white hover:bg-[#242E4D] dark:text-white dark:hover:bg-gray-700 sm:justify-start"
-              title="Dashboard"
+              title="Buttons"
             >
               <svg
                 aria-hidden="true"
@@ -86,14 +86,14 @@ const Sidebar = () => {
                 <path d="M2 10a8 8 0 018-8v8h8a8 8 0 11-16 0z"></path>
                 <path d="M12 2.252A8.014 8.014 0 0117.748 8H12V2.252z"></path>
               </svg>
-              <span className="ml-3 hidden sm:inline-flex">Dashboard</span>
-            </a>
+              <span className="ml-3 hidden sm:inline-flex">Buttons</span>
+            </Link>
           </li>
           <li className="w-full flex-initial flex-row">
-            <a
-              href="#"
+            <Link
+              href="/outline"
               className="flex items-center justify-center rounded-lg p-2 text-base font-normal text-white hover:bg-[#242E4D] dark:text-white dark:hover:bg-gray-700 sm:justify-start"
-              title="Dashboard"
+              title="Outline"
             >
               <svg
                 aria-hidden="true"
@@ -105,8 +105,8 @@ const Sidebar = () => {
                 <path d="M2 10a8 8 0 018-8v8h8a8 8 0 11-16 0z"></path>
                 <path d="M12 2.252A8.014 8.014 0 0117.748 8H12V2.252z"></path>
               </svg>
-              <span className="ml-3 hidden sm:inline-flex">Dashboard</span>
-            </a>
+              <span className="ml-3 hidden sm:inline-flex">Outline</span>
+            </Link>
           </li>
           <li className="w-full flex-initial flex-row">
             <a

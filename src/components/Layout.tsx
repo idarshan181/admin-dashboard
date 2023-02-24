@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import { PropsWithChildren, ReactNode } from 'react';
+import { ReactNode } from 'react';
 
 import Footer from './Footer';
 import Header from './Header';
@@ -24,18 +24,24 @@ const Layout = ({
   className = ''
 }: Props) => {
   return (
-    <div
-      className={sidebar ? `flex h-screen flex-row` : `flex h-screen flex-col`}
-    >
-      <Head>
-        <title>{title}</title>
-        <meta charSet="utf-8" />
-        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-      </Head>
+    <div className="flex h-screen flex-col">
       {header && <Header />}
-      {sidebar && <Sidebar />}
-      <main className={`${className} flex-1`}>{children}</main>
-      {header && footer && <Footer />}
+      <div
+        className={sidebar ? `flex h-full flex-row` : `flex h-full flex-col`}
+      >
+        <Head>
+          <title>{title}</title>
+          <meta charSet="utf-8" />
+          <meta
+            name="viewport"
+            content="initial-scale=1.0, width=device-width"
+          />
+        </Head>
+
+        {sidebar && <Sidebar />}
+        <main className={`${className} flex-1`}>{children}</main>
+      </div>
+      {footer && <Footer />}
     </div>
   );
 };

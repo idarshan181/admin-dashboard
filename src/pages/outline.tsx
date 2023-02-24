@@ -1,8 +1,16 @@
+import Layout from '@/components/Layout';
+
 import { Button } from '@/elements/Button';
 
 export default function Outline() {
   return (
-    <>
+    <Layout
+      title="Outline Buttons"
+      header={true}
+      footer={true}
+      sidebar={true}
+      className={`flex max-h-screen flex-row items-center justify-center`}
+    >
       <Button
         variant="OUTLINE"
         onClick={e => console.log(e)}
@@ -43,6 +51,6 @@ export default function Outline() {
       >
         Rounded
       </Button>
-    </>
+    </Layout>
   );
 }
